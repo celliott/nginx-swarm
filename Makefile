@@ -13,6 +13,9 @@ validate :
 build : validate set-pass
 	docker-compose build
 
+push :
+	docker-compose push
+
 up : set-pass
 	docker-compose up -d
 
