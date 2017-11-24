@@ -12,7 +12,7 @@ services:
       - PROXY_AUTH_USER=${PROXY_AUTH_USER}
       - PROXY_AUTH_PASS=${PROXY_AUTH_PASS}
     networks:
-      - ingress
+      - overlay01
     ports:
       - "80:80"
       - "443:443"
@@ -47,3 +47,8 @@ services:
         failure_action: continue
         monitor: 60s
         max_failure_ratio: 0.3
+
+networks:
+  default:
+    external:
+      name: overlay01
