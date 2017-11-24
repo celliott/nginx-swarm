@@ -3,6 +3,7 @@ services:
   nginx-swarm:
     build: ./docker/${CONTAINER}
     image: ${ORGANIZATION}/${CONTAINER}:${BUILD_TAG}
+    container_name: ${CONTAINER}
     restart: always
     environment:
       - PROXY_SERVICE_NAME=${PROXY_SERVICE_NAME}

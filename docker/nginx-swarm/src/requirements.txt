@@ -2,5 +2,4 @@ requests
 Jinja2
 docker-py
 Flask
-urllib3==1.14
 supervisor
