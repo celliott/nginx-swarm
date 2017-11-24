@@ -17,3 +17,6 @@ services:
       - "3000:3000"
     networks:
       - ingress
+    volumes:
+      - /usr/bin/docker:/usr/bin/docker
+      - /var/run/docker.sock:/var/run/docker.sock

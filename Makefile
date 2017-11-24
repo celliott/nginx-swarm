@@ -20,7 +20,7 @@ down :
 	docker-compose down
 
 tail :
-	docker tail -f $(CONTAINER)
+	docker logs -f $(CONTAINER)
 
 shell :
 	docker exec -ti $(CONTAINER) /bin/bash
