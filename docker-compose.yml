@@ -1,0 +1,16 @@
+version: "3"
+services:
+  nginx-swarm:
+    build: ./docker/${CONTAINER}
+    image: ${ORGANIZATION}/${CONTAINER}:${BUILD_TAG}
+    restart: always
+    environment:
+      - PROXY_SERVICE_NAME=${PROXY_SERVICE_NAME}
+      - PROXY_DOMAIN=${PROXY_DOMAIN}
+      - PROXY_EMAIL=${PROXY_EMAIL}
+      - PROXY_AUTH_USER=${PROXY_AUTH_USER}
+      - PROXY_AUTH_PASS=${PROXY_AUTH_PASS}
+    ports:
+      - "80:80"
+      - "443:443"
+      - "3000:3000"
