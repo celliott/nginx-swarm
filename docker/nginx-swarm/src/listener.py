@@ -16,8 +16,7 @@ def parse_events(event):
         'name': event['Actor']['Attributes']['com.docker.swarm.service.name'],
         'action': event['Action'] }
       logging.info("Service {name} has been {action}ed".format(**item))
-      url = 'http://{proxy_host}:{proxy_port}/update_config'.format(**options)
-      requests.post(url, auth=(options['proxy_api_user'], options['proxy_api_pass']))
+      requests.post('http://{proxy_host}:{proxy_port}/update_config'.format(**options))
   except: pass
 
 if __name__ == "__main__":
