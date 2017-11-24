@@ -11,6 +11,8 @@ services:
       - PROXY_EMAIL=${PROXY_EMAIL}
       - PROXY_AUTH_USER=${PROXY_AUTH_USER}
       - PROXY_AUTH_PASS=${PROXY_AUTH_PASS}
+    networks:
+      - ingress
     ports:
       - "80:80"
       - "443:443"
