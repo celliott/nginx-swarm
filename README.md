@@ -1,6 +1,6 @@
 # nginx-swarm
 
-This is a container that queries docker swarm and generates the nginx config based on the results. nginx-swarm listens for local docker events and triggers update_config on `start` and `kill` events. You can also trigger update_config using remote calls.
+A container that queries docker and generates the nginx config based on the results. nginx-swarm listens for local docker events and triggers update_config on `start` and `kill` events. You can also trigger update_config using remote calls.
 
 TODO
 - Add support for multiple replicas. Currently only supports one per container.
@@ -37,7 +37,7 @@ $ docker service create \
   --replicas 1 \
   --restart-condition any \
   --name nginx-static-0-0-1 \
-  --network overlay01 \
+  --network ingress \
   --container-label endpoint=0.0.1 \
   -p 80 \
   nginx
@@ -46,7 +46,7 @@ $ docker service create \
   --replicas 1 \
   --restart-condition any \
   --name nginx-0-0-2 \
-  --network overlay01 \
+  --network ingress \
   --container-label endpoint=0.0.2 \
   -p 80 \
   nginx
