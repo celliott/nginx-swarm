@@ -37,7 +37,7 @@ $ docker service create \
   --replicas 1 \
   --restart-condition any \
   --name nginx-static-0-0-1 \
-  --network ingress \
+  --network overlay01 \
   --container-label endpoint=0.0.1 \
   -p 80 \
   nginx
@@ -46,7 +46,7 @@ $ docker service create \
   --replicas 1 \
   --restart-condition any \
   --name nginx-0-0-2 \
-  --network ingress \
+  --network overlay01 \
   --container-label endpoint=0.0.2 \
   -p 80 \
   nginx
