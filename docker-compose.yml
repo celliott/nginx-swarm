@@ -23,7 +23,7 @@ services:
     # service deployment
     deploy:
       mode: replicated
-      replicas: 1
+      replicas: 2
       # labels: [endpoint=${BUILD_TAG}]
       # service resource management
       resources:
@@ -43,7 +43,7 @@ services:
         window: 120s
       # service update configuration
       update_config:
-        parallelism: 1
+        parallelism: 2
         delay: 10s
         failure_action: continue
         monitor: 60s
