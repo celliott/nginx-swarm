@@ -28,4 +28,4 @@ shell :
 reset : set-pass down up
 
 deploy :
-	docker stack deploy $(CONTAINER)
+	docker stack deploy -c docker-compose.yml $(CONTAINER)
