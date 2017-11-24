@@ -26,3 +26,6 @@ shell :
 	docker exec -ti $(CONTAINER) /bin/bash
 
 reset : set-pass down up
+
+deploy :
+	docker stack deploy $(CONTAINER)
