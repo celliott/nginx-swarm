@@ -15,8 +15,6 @@ services:
       - "80:80"
       - "443:443"
       - "3000:3000"
-    networks:
-      - ingress
     volumes:
       - /usr/bin/docker:/usr/bin/docker
       - /var/run/docker.sock:/var/run/docker.sock
