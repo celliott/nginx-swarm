@@ -23,7 +23,6 @@ services:
       - /usr/bin/docker:/usr/bin/docker
       - /var/run/docker.sock:/var/run/docker.sock
     deploy:
-      name: ${CONTAINER}
       mode: replicated
       replicas: 2
       # labels: [endpoint=${BUILD_TAG}]
