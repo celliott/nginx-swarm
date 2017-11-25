@@ -7,6 +7,7 @@ services:
     restart: always
     environment:
       - PROXY_SERVICE_NAME=${PROXY_SERVICE_NAME}
+      - PROXY_PORT=${PROXY_PORT}
       - PROXY_DOMAIN=${PROXY_DOMAIN}
       - PROXY_EMAIL=${PROXY_EMAIL}
       - PROXY_AUTH_USER=${PROXY_AUTH_USER}
@@ -16,7 +17,7 @@ services:
     ports:
       - "80:80"
       - "443:443"
-      - "3000:3000"
+      - "${PROXY_PORT}:${PROXY_PORT}"
     volumes:
       - /data/certbot:/etc/letsencrypt
       - /usr/bin/docker:/usr/bin/docker
