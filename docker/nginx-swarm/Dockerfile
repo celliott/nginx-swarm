@@ -22,6 +22,6 @@ COPY docker-entrypoint.sh /
 RUN chmod +x /docker-entrypoint.sh
 
 ADD src .
-RUN chmod +x *py
+RUN chmod +x *.py
 
 ENTRYPOINT ["/docker-entrypoint.sh"]

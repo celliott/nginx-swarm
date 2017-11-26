@@ -24,8 +24,7 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
     deploy:
       mode: replicated
-      replicas: 2
-      # labels: [endpoint=${BUILD_TAG}]
+      replicas: 1
       resources:
         limits:
           cpus: '0.25'

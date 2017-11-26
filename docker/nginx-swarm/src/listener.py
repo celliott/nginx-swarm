@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 import os
-import requests
+import utils
 import logging
 import options
 
@@ -16,7 +16,7 @@ def parse_events(event):
         'name': event['Actor']['Attributes']['com.docker.swarm.service.name'],
         'action': event['Action'] }
       logging.info("Service {name} has been {action}ed".format(**item))
-      requests.post('http://{proxy_host}:{proxy_port}/update_config'.format(**options))
+      utils.generate_config(options)
   except: pass
 
 if __name__ == "__main__":
