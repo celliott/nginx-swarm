@@ -1,5 +1,5 @@
 requests
 Jinja2
-docker-py
+docker
 Flask
 supervisor

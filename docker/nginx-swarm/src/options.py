@@ -11,5 +11,4 @@ def get_options():
         'proxy_domain': os.getenv('PROXY_DOMAIN', 'example.io'),
         'template': os.getenv('TEMPLATE', 'default'),
         'config_path': '/etc/nginx/conf.d/default.conf',
-        'docker': docker.Client(base_url='unix://var/run/docker.sock'),
     }

@@ -1,11 +1,13 @@
 #!/usr/bin/env python
 
 import os
+import docker
 import utils
 import logging
 import options
 
 options = options.get_options()
+client = docker.from_env()
 logging.basicConfig(level=logging.INFO, format='[%(levelname)s] %(message)s')
 
 def parse_events(event):
@@ -20,5 +22,5 @@ def parse_events(event):
   except: pass
 
 if __name__ == "__main__":
-  for event in options['docker'].events(decode=True):
+  for event in client.events(decode=True):
     parse_events(event)
